@@ -17,7 +17,12 @@ require.config({
 });
 
 require([
-    'backbone'
-], function (Backbone) {
+    'backbone',
+    'jquery',
+    'views/blank'
+], function (Backbone, $, BlankView) {
     Backbone.history.start();
+    var blank = new BlankView();
+    $('#body').append(blank.el);
+    blank.render();
 });
