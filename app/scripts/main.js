@@ -25,11 +25,10 @@ require([
     'jquery',
     'bootstrap',
     'metisMenu',
-    'views/blank'
-], function (Backbone, $, bootstrap, metisMenu, BlankView) {
-    Backbone.history.start();
-    var blank = new BlankView();
-    $('#body').append(blank.el);
-    blank.render();
+    'routes/app'
+], function (Backbone, $, bootstrap, metisMenu, AppRouter) {
     $('#side-menu').metisMenu();
+
+    var appRouter = new AppRouter();
+    Backbone.history.start();
 });
