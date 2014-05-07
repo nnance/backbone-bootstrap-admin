@@ -25,9 +25,19 @@ require([
     'jquery',
     'bootstrap',
     'metisMenu',
-    'routes/app'
-], function (Backbone, $, bootstrap, metisMenu, AppRouter) {
+    'routes/app',
+    'views/nav/messages',
+    'collections/messages'
+], function (Backbone, $, bootstrap, metisMenu, AppRouter, NavMessages, Messages) {
     $('#side-menu').metisMenu();
+
+    var messages = new Messages();
+
+    var navMessages = new NavMessages({collection: messages});
+    $('#nav-messages').append(navMessages.el);
+    navMessages.render();
+
+    messages.fetch({reset: true});
 
     var appRouter = new AppRouter();
     Backbone.history.start();

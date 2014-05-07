@@ -15,15 +15,13 @@ define([
         },
 
         showBlankView: function() {
-            var view = new BlankView();
+            var view = new BlankView().render();
             $('#body').empty().append(view.el);
-            view.render();
         },
 
         showLoginView: function() {
-            var view = new LoginView();
+            var view = new LoginView().render();
             $('#body').empty().append(view.el);
-            view.render();
         }
 
     });

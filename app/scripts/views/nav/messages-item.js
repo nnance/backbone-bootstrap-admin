@@ -8,10 +8,10 @@ define([
 ], function ($, _, Backbone, JST) {
     'use strict';
 
-    var LoginView = Backbone.View.extend({
-        template: JST['app/scripts/templates/login.ejs'],
+    var NavMessagesItemView = Backbone.View.extend({
+        template: JST['app/scripts/templates/nav/messages-item.ejs'],
 
-        tagName: 'div',
+        tagName: 'li',
 
         id: '',
 
@@ -31,5 +31,5 @@ define([
         }
     });
 
-    return LoginView;
+    return NavMessagesItemView;
 });
