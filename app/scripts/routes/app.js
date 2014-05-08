@@ -3,25 +3,33 @@
 define([
     'jquery',
     'backbone',
+    'views/dashboard',
     'views/blank',
     'views/login'
-], function ($, Backbone, BlankView, LoginView) {
+], function ($, Backbone, DashboardView, BlankView, LoginView) {
     'use strict';
 
     var AppRouter = Backbone.Router.extend({
         routes: {
-            'blank': 'showBlankView',
-            'login': 'showLoginView'
+            '': 'showDashboard',
+            'dashboard': 'showDashboard',
+            'blank': 'showBlank',
+            'login': 'showLogin'
         },
 
-        showBlankView: function() {
-            var view = new BlankView().render();
-            $('#body').empty().append(view.el);
+        showDashboard: function() {
+            var view = new DashboardView();
+            $('#page-wrapper').empty().append(view.render().el);
         },
 
-        showLoginView: function() {
-            var view = new LoginView().render();
-            $('#body').empty().append(view.el);
+        showBlank: function() {
+            var view = new BlankView();
+            $('#page-wrapper').empty().append(view.render().el);
+        },
+
+        showLogin: function() {
+            var view = new LoginView();
+            $('#page-wrapper').empty().append(view.render().el);
         }
 
     });
