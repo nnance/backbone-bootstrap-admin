@@ -5,12 +5,12 @@ define([
     'underscore',
     'backbone',
     'templates',
-    'views/nav/messages-item',
-    'views/nav/messages-all-item'
-], function ($, _, Backbone, JST, MessagesItemView, MessagesAllItemView) {
+    'views/nav/messages-item'
+], function ($, _, Backbone, JST, MessagesItemView) {
     'use strict';
 
     var NavMessagesView = Backbone.View.extend({
+        template: JST['app/scripts/templates/nav/messages.ejs'],
         dividerTemplate: JST['app/scripts/templates/nav/menu-divider.ejs'],
 
         tagName: 'ul',
@@ -28,13 +28,14 @@ define([
         },
 
         render: function () {
+            this.$el.html(this.template(this));
             if (this.collection && this.collection.length > 0) {
+                var lastItem = this.$('#all-messages');
                 this.collection.forEach(function(model){
                     var view = new MessagesItemView({model: model}).render();
-                    this.$el.append(view.el);
-                    this.$el.append(this.dividerTemplate());
+                    lastItem.before(view.el);
+                    lastItem.before(this.dividerTemplate());
                 }, this);
-                this.$el.append(new MessagesAllItemView().render().el);
             }
             return this;
         }

@@ -26,7 +26,7 @@ define([
         },
 
         render: function () {
-            this.$el.html(this.template(this.model));
+            this.$el.html(this.template(this));
             return this;
         }
     });

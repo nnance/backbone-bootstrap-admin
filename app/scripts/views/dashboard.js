@@ -26,7 +26,7 @@ define([
         },
 
         render: function () {
-            this.$el.html(this.template(this.model));
+            this.$el.html(this.template(this));
             var notificationsView = new NotificationsView({collection: this.notifications});
             this.$('#col-right').append(notificationsView.render().el);
             return this;

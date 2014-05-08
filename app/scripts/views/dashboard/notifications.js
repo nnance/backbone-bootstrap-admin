@@ -28,7 +28,7 @@ define([
         },
 
         render: function () {
-            this.$el.html(this.template(this.collection));
+            this.$el.html(this.template(this));
             if (this.collection && this.collection.length > 0) {
                 this.collection.forEach(function(model){
                     var view = new NotificationsItemView({model: model});
