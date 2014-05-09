@@ -17,19 +17,20 @@ define([
             'login': 'showLogin'
         },
 
+        initialize: function(options) {
+            this.container = options.container;
+        },
+
         showDashboard: function() {
-            var view = new DashboardView();
-            $('#page-wrapper').empty().append(view.render().el);
+            this.container.setView(new DashboardView());
         },
 
         showBlank: function() {
-            var view = new BlankView();
-            $('#page-wrapper').empty().append(view.render().el);
+            this.container.setView(new BlankView());
         },
 
         showLogin: function() {
-            var view = new LoginView();
-            $('#page-wrapper').empty().append(view.render().el);
+            this.container.setView(new LoginView());
         }
 
     });

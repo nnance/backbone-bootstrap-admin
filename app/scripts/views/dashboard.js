@@ -13,22 +13,16 @@ define([
     var DashboardView = Backbone.View.extend({
         template: JST['app/scripts/templates/dashboard.ejs'],
 
-        tagName: 'div',
-
-        id: '',
-
-        className: '',
-
-        events: {},
-
         initialize: function () {
             this.notifications = new Notifications();
         },
 
         render: function () {
             this.$el.html(this.template(this));
-            var notificationsView = new NotificationsView({collection: this.notifications});
-            this.$('#col-right').append(notificationsView.render().el);
+            this.addSubView({
+                view: new NotificationsView({collection: this.notifications}),
+                selector: '#col-right'
+            });
             return this;
         }
     });

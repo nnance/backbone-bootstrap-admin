@@ -31,9 +31,12 @@ define([
             this.$el.html(this.template(this));
             if (this.collection && this.collection.length > 0) {
                 var lastItem = this.$('#all-messages');
-                this.collection.forEach(function(model){
-                    var view = new MessagesItemView({model: model}).render();
-                    lastItem.before(view.el);
+                this.collection.forEach(function(model) {
+                    this.addSubView({
+                        view: new MessagesItemView({model: model}),
+                        selector: lastItem,
+                        location: 'before'
+                    });
                     lastItem.before(this.dividerTemplate());
                 }, this);
             }

@@ -20,6 +20,8 @@ define([
 
         events: {},
 
+        manage: true,
+
         initialize: function () {
             if (this.collection) {
                 this.listenTo(this.collection, 'reset', this.render);
@@ -31,8 +33,10 @@ define([
             this.$el.html(this.template(this));
             if (this.collection && this.collection.length > 0) {
                 this.collection.forEach(function(model){
-                    var view = new NotificationsItemView({model: model});
-                    this.$('#list-group').append(view.render().el);
+                    this.addSubView({
+                        view: new NotificationsItemView({model: model}),
+                        selector: '#list-group'
+                    });
                 }, this);
             }
             return this;

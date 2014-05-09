@@ -13,12 +13,6 @@ define([
 
         tagName: 'li',
 
-        id: '',
-
-        className: '',
-
-        events: {},
-
         initialize: function () {
             if (this.model) {
                 this.listenTo(this.model, 'change', this.render);

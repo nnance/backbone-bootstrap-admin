@@ -16,29 +16,24 @@ require.config({
         backbone: '../bower_components/backbone/backbone',
         underscore: '../bower_components/underscore/underscore',
         bootstrap: '../bower_components/sass-bootstrap/dist/js/bootstrap',
-        metisMenu: '../bower_components/metisMenu/jquery.metisMenu'
+        metisMenu: '../bower_components/metisMenu/jquery.metisMenu',
+        viewManager: 'vendor/backbone.viewmanager'
     }
 });
 
 require([
-    'backbone',
     'jquery',
     'bootstrap',
+    'backbone',
+    'viewManager',
     'metisMenu',
-    'routes/app',
-    'views/nav/messages',
-    'collections/messages'
-], function (Backbone, $, bootstrap, metisMenu, AppRouter, NavMessages, Messages) {
+    'views/app',
+    'routes/app'
+], function ($, bootstrap, Backbone, ViewManager, metisMenu, AppView, AppRouter) {
     $('#side-menu').metisMenu();
 
-    var messages = new Messages();
-
-    var navMessages = new NavMessages({collection: messages});
-    $('#nav-messages').append(navMessages.el);
-    navMessages.render();
-
-    messages.fetch({reset: true});
-
-    var appRouter = new AppRouter();
+    var appView = new AppView();
+    var appRouter = new AppRouter({container: appView.container});
+    appView.render().loadData();
     Backbone.history.start();
 });

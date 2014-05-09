@@ -11,20 +11,6 @@ define([
     var BlankView = Backbone.View.extend({
         template: JST['app/scripts/templates/blank.ejs'],
 
-        tagName: 'div',
-
-        id: '',
-
-        className: '',
-
-        events: {},
-
-        initialize: function () {
-            if (this.model) {
-                this.listenTo(this.model, 'change', this.render);
-            }
-        },
-
         render: function () {
             this.$el.html(this.template(this));
             return this;
