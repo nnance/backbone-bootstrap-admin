@@ -25,19 +25,13 @@
         this.addSubView({view: view, selector: this.$el});
     },
 
-    insertView: function(view, location) {
-        if (!this._subViews)
-            this._subViews = [view];
-        else
-            this._subViews.push(view);
+    getView: function() {
+        if (this._subViews && this._subViews.length > 0)
+            return this._subViews[0];
+    },
 
-        view.render();
-        if (_.isObject(location))
-            location.append(view.el);
-        else if (_.isString(location))
-            this.$(location).append(view.el);
-        else
-            this.$el.append(view.el);
+    insertView: function(view, location) {
+        this.addSubView({view: view, selector: location});
     },
 
     addSubView: function(options) {

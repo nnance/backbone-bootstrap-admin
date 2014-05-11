@@ -18,19 +18,19 @@ define([
         },
 
         initialize: function(options) {
-            this.container = options.container;
+            this.app = options.app;
         },
 
         showDashboard: function() {
-            this.container.setView(new DashboardView());
+            this.app.container.setView(new DashboardView());
         },
 
         showBlank: function() {
-            this.container.setView(new BlankView());
+            this.app.container.setView(new BlankView());
         },
 
         showLogin: function() {
-            this.container.setView(new LoginView());
+            this.app.showLogin();
         }
 
     });

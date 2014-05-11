@@ -26,14 +26,11 @@ require([
     'bootstrap',
     'backbone',
     'viewManager',
-    'metisMenu',
     'views/app',
     'routes/app'
-], function ($, bootstrap, Backbone, ViewManager, metisMenu, AppView, AppRouter) {
-    $('#side-menu').metisMenu();
+], function ($, bootstrap, Backbone, ViewManager, AppView, AppRouter) {
 
     var appView = new AppView();
-    var appRouter = new AppRouter({container: appView.container});
-    appView.render().loadData();
-    Backbone.history.start();
+    var appRouter = new AppRouter({app: appView});
+    appView.start();
 });

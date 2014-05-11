@@ -11,9 +11,22 @@ define([
     var LoginView = Backbone.View.extend({
         template: JST['app/scripts/templates/login.ejs'],
 
+        events: {
+            'click button': 'signIn'
+        },
+
+        initialize: function(options) {
+            this.app = options.app;
+        },
+
         render: function () {
             this.$el.html(this.template(this));
             return this;
+        },
+
+        signIn: function(event) {
+            event.preventDefault();
+            this.app.signIn();
         }
     });
 
