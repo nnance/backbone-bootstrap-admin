@@ -21,7 +21,7 @@ define([
             this.addSubView({view: new TopLinksView()});
             this.addSubView({view: new SideMenuView({app: this.app})});
             this.addSubView({
-                view: new NavMessages({collection: this.messages}),
+                view: new NavMessages({collection: this.app.messages}),
                 selector: '#nav-messages'
             });
             return this;
