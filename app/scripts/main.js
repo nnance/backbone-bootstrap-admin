@@ -17,7 +17,8 @@ require.config({
         underscore: '../bower_components/underscore/underscore',
         bootstrap: '../bower_components/sass-bootstrap/dist/js/bootstrap',
         metisMenu: '../bower_components/metisMenu/jquery.metisMenu',
-        viewManager: 'vendor/backbone.viewmanager'
+        viewManager: 'vendor/backbone.viewmanager',
+        localStorage: '../bower_components/backbone.localstorage/backbone.localstorage'
     }
 });
 

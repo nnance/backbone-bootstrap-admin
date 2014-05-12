@@ -10,7 +10,8 @@
     "requirejs-text": "~2.0.10",
     "modernizr": "~2.7.1",
     "font-awesome": "~4.0.3",
-    "metisMenu": "~1.0.1"
+    "metisMenu": "~1.0.1",
+    "backbone.localstorage": "~1.1.7"
   },
   "devDependencies": {}
 }

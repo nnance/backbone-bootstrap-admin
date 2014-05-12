@@ -26,6 +26,9 @@ define([
 
         signIn: function(event) {
             event.preventDefault();
+            this.model.set(this.serializeForm('form'));
+            if (this.model.get('remember'))
+                this.model.save();
             this.app.signIn();
         }
     });

@@ -15,6 +15,8 @@ define([
 
         initialize: function(options) {
             this.app = options.app;
+            this.listenTo(this.app, 'login', this.showMenu);
+            this.listenTo(this.app, 'logout', this.hideMenu);
         },
 
         showMenu: function() {

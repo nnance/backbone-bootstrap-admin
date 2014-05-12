@@ -14,7 +14,7 @@ define([
             '': 'showDashboard',
             'dashboard': 'showDashboard',
             'blank': 'showBlank',
-            'login': 'showLogin'
+            'signout': 'signout'
         },
 
         initialize: function(options) {
@@ -29,8 +29,8 @@ define([
             this.app.container.setView(new BlankView());
         },
 
-        showLogin: function() {
-            this.app.showLogin();
+        signout: function() {
+            this.app.signOut();
         }
 
     });
