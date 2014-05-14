@@ -47,7 +47,6 @@ define([
         },
 
         updateTable: function() {
-          debugger;
             this.removeSubViews();
             this.transactions.forEach(function(transaction){
                 this.addSubView({

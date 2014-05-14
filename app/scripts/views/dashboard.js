@@ -8,11 +8,13 @@ define([
     'collections/mobile-sales',
     'collections/funding',
     'collections/transactions',
+    'collections/donut-sales',
     'collections/notifications',
     'views/dashboard/area-chart',
     'views/dashboard/bar-chart',
-    'views/dashboard/notifications'
-], function ($, _, Backbone, JST, MobileSales, Funding, Transactions, Notifications, AreaChartView, BarChartView, NotificationsView) {
+    'views/dashboard/notifications',
+    'views/dashboard/donut-chart'
+], function ($, _, Backbone, JST, MobileSales, Funding, Transactions, DonutSales, Notifications, AreaChartView, BarChartView, NotificationsView, DonutChartView) {
     'use strict';
 
     var DashboardView = Backbone.View.extend({
@@ -23,6 +25,7 @@ define([
             this.funding = new Funding();
             this.transactions = new Transactions();
             this.notifications = new Notifications();
+            this.donutSales = new DonutSales();
         },
 
         render: function () {
@@ -42,6 +45,10 @@ define([
                 view: new NotificationsView({collection: this.notifications}),
                 selector: '#col-right'
             });
+            this.addSubView({
+                view: new DonutChartView({collection: this.donutSales}),
+                selector: '#col-right'
+            });
             return this;
         },
 
@@ -50,6 +57,7 @@ define([
             this.funding.fetch({reset: true});
             this.transactions.fetch({reset: true});
             this.notifications.fetch({reset: true});
+            this.donutSales.fetch({reset: true});
         }
     });
 
