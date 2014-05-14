@@ -34,10 +34,6 @@ define([
             }.bind(this));
         },
 
-        showPageWrapper: function() {
-            this.addSubView({view: this.container});
-        },
-
         showLogin: function() {
             this.navigation.hideMenu();
             if (this.sessions.length === 0)
@@ -49,7 +45,7 @@ define([
         signIn: function() {
             this.trigger('login');
             this.removeSubViews();
-            this.showPageWrapper();
+            this.addSubView({view: this.container});
             if (!Backbone.History.started)
                 Backbone.history.start();
             else
