@@ -23,7 +23,7 @@ require.config({
         metisMenu: '../bower_components/metisMenu/jquery.metisMenu',
         raphael: '../bower_components/raphael/raphael',
         morris: '../bower_components/morris/morris',
-        viewManager: 'vendor/backbone.viewmanager',
+        viewManager: '../bower_components/backbone-plugins/viewmanager/backbone.viewmanager',
         localStorage: '../bower_components/backbone.localstorage/backbone.localstorage'
     }
 });
