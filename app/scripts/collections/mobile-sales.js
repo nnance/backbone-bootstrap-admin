@@ -2,14 +2,12 @@
 
 define([
     'underscore',
-    'backbone',
-    'models/mobile-sales'
-], function (_, Backbone, MobileSalesModel) {
+    'backbone'
+], function (_, Backbone) {
     'use strict';
 
     var MobileSalesCollection = Backbone.Collection.extend({
-        url: 'scripts/data/mobile-sales.json',
-        model: MobileSalesModel
+        url: 'scripts/data/mobile-sales.json'
     });
 
     return MobileSalesCollection;

@@ -2,14 +2,12 @@
 
 define([
     'underscore',
-    'backbone',
-    'models/messages'
-], function (_, Backbone, MessagesModel) {
+    'backbone'
+], function (_, Backbone) {
     'use strict';
 
     var MessagesCollection = Backbone.Collection.extend({
-        url: 'scripts/data/messages.json',
-        model: MessagesModel
+        url: 'scripts/data/messages.json'
     });
 
     return MessagesCollection;

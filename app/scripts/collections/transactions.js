@@ -2,14 +2,12 @@
 
 define([
     'underscore',
-    'backbone',
-    'models/transactions'
-], function (_, Backbone, TransactionsModel) {
+    'backbone'
+], function (_, Backbone) {
     'use strict';
 
     var TransactionsCollection = Backbone.Collection.extend({
-        url: 'scripts/data/transactions.json',
-        model: TransactionsModel
+        url: 'scripts/data/transactions.json'
     });
 
     return TransactionsCollection;

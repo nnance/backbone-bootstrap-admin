@@ -2,14 +2,12 @@
 
 define([
     'underscore',
-    'backbone',
-    'models/notifications'
-], function (_, Backbone, NotificationsModel) {
+    'backbone'
+], function (_, Backbone) {
     'use strict';
 
     var NotificationsCollection = Backbone.Collection.extend({
-        url: 'scripts/data/notifications.json',
-        model: NotificationsModel
+        url: 'scripts/data/notifications.json'
     });
 
     return NotificationsCollection;
