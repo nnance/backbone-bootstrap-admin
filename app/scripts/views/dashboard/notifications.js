@@ -23,14 +23,16 @@ define([
         manage: true,
 
         initialize: function () {
-            if (this.collection) {
-                this.listenTo(this.collection, 'reset', this.render);
-                this.collection.fetch({reset: true});
-            }
+            this.listenTo(this.collection, 'reset', this.updateList);
         },
 
         render: function () {
             this.$el.html(this.template(this));
+            return this;
+        },
+
+        updateList: function() {
+            this.removeSubViews();
             if (this.collection && this.collection.length > 0) {
                 this.collection.forEach(function(model){
                     this.addSubView({
@@ -39,7 +41,6 @@ define([
                     });
                 }, this);
             }
-            return this;
         }
     });
 

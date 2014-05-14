@@ -30,10 +30,6 @@ define([
             if (options && options.app) {
                 this.app = options.app;
             }
-
-            if (this.model) {
-                this.listenTo(this.model, 'change', this.render);
-            }
         },
 
         render: function () {
