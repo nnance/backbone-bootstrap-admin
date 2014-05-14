@@ -22,7 +22,7 @@ define([
         },
 
         showDashboard: function() {
-            this.app.container.setView(new DashboardView());
+            this.app.container.setView(new DashboardView()).loadData();
         },
 
         showBlank: function() {

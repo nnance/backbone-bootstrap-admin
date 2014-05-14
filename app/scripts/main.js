@@ -9,6 +9,10 @@ require.config({
         },
         metisMenu: {
             deps: ['jquery']
+        },
+        morris: {
+            deps: ['jquery','raphael'],
+            exports: 'raphael'
         }
     },
     paths: {
@@ -17,6 +21,8 @@ require.config({
         underscore: '../bower_components/underscore/underscore',
         bootstrap: '../bower_components/sass-bootstrap/dist/js/bootstrap',
         metisMenu: '../bower_components/metisMenu/jquery.metisMenu',
+        raphael: '../bower_components/raphael/raphael',
+        morris: '../bower_components/morris/morris',
         viewManager: 'vendor/backbone.viewmanager',
         localStorage: '../bower_components/backbone.localstorage/backbone.localstorage'
     }

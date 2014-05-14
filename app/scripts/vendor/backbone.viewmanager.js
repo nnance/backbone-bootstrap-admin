@@ -23,6 +23,7 @@
     setView: function(view) {
         this.removeSubViews();
         this.addSubView({view: view, selector: this.$el});
+        return view;
     },
 
     getView: function() {
@@ -31,7 +32,7 @@
     },
 
     insertView: function(view, location) {
-        this.addSubView({view: view, selector: location});
+        return this.addSubView({view: view, selector: location});
     },
 
     addSubView: function(options) {
@@ -57,6 +58,8 @@
             selector.after(options.view.el);
         else
             selector.append(options.view.el);
+
+        return options.view;
     },
 
     removeSubViews: function() {
