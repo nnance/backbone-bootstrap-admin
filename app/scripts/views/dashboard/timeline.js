@@ -16,15 +16,8 @@ define([
 
         className: 'panel panel-default',
 
-        events: {},
-
         initialize: function () {
             this.listenTo(this.collection, 'reset', this.updateTimeline);
-        },
-
-        render: function () {
-            this.$el.html(this.template(this.model));
-            return this;
         },
 
         updateTimeline: function() {

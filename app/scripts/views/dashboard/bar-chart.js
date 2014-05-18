@@ -15,11 +15,7 @@ define([
 
         tagName: 'div',
 
-        id: '',
-
         className: 'panel panel-default',
-
-        events: {},
 
         initialize: function (options) {
             if (options && options.transactions) {
@@ -27,11 +23,6 @@ define([
                 this.listenTo(this.transactions, 'reset', this.updateTable);
             }
             this.listenTo(this.collection, 'reset', this.updateChart);
-        },
-
-        render: function () {
-            this.$el.html(this.template(this));
-            return this;
         },
 
         updateChart: function() {

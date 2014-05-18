@@ -13,16 +13,7 @@ define([
 
         tagName: 'ul',
 
-        id: '',
-
         className: 'nav navbar-top-links navbar-right',
-
-        events: {},
-
-        render: function () {
-            this.$el.html(this.template(this.model));
-            return this;
-        }
     });
 
     return NavTopLinksView;

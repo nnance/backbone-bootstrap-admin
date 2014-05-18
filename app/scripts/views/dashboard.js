@@ -31,8 +31,7 @@ define([
             this.donutSales = new DonutSales();
         },
 
-        render: function () {
-            this.$el.html(this.template(this));
+        onRender: function () {
             this.addSubView({
                 view: new AreaChartView({collection: this.mobileSales}),
                 selector: '#col-left'
@@ -56,7 +55,6 @@ define([
                 view: new DonutChartView({collection: this.donutSales}),
                 selector: '#col-right'
             });
-            return this;
         },
 
         loadData: function() {

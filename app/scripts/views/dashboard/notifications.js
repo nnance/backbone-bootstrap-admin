@@ -14,21 +14,8 @@ define([
 
         tagName: 'div',
 
-        id: '',
-
-        className: '',
-
-        events: {},
-
-        manage: true,
-
         initialize: function () {
             this.listenTo(this.collection, 'reset', this.updateList);
-        },
-
-        render: function () {
-            this.$el.html(this.template(this));
-            return this;
         },
 
         updateList: function() {

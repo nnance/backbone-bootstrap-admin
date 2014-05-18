@@ -16,14 +16,11 @@ define([
 
         tagName: 'li',
 
-        events: {},
-
         initialize: function () {
             this.listenTo(this.model, 'change', this.render);
         },
 
-        render: function () {
-            this.$el.html(this.template(this));
+        onRender: function () {
             if (this.model.get('status') || this.model.get('type'))
                 this.$el.prepend(this.badgeTemplate(this));
 
@@ -34,7 +31,6 @@ define([
             if (this.model.get('type') === 'save') {
                 this.$('.timeline-panel').append(this.actionTemplate(this));
             }
-            return this;
         }
     });
 

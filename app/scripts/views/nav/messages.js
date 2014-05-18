@@ -27,8 +27,7 @@ define([
             }
         },
 
-        render: function () {
-            this.$el.html(this.template(this));
+        onRender: function () {
             if (this.collection && this.collection.length > 0) {
                 var lastItem = this.$('#all-messages');
                 this.collection.forEach(function(model) {
@@ -40,7 +39,6 @@ define([
                     lastItem.before(this.dividerTemplate());
                 }, this);
             }
-            return this;
         }
     });
 

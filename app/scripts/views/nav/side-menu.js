@@ -32,10 +32,8 @@ define([
             }
         },
 
-        render: function () {
-            this.$el.html(this.template(this.model));
+        onShow: function () {
             this.$('#side-menu').metisMenu();
-            return this;
         },
 
         showLogin: function(event) {

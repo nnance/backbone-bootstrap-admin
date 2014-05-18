@@ -13,21 +13,10 @@ define([
 
         tagName: 'a',
 
-        id: '',
-
         className: 'list-group-item',
-
-        events: {},
-
-        manage: true,
 
         initialize: function () {
             this.listenTo(this.model, 'change', this.render);
-        },
-
-        render: function () {
-            this.$el.html(this.template(this));
-            return this;
         },
 
         getCountAndName: function() {

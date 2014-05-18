@@ -19,11 +19,6 @@ define([
             this.app = options.app;
         },
 
-        render: function () {
-            this.$el.html(this.template(this));
-            return this;
-        },
-
         signIn: function(event) {
             event.preventDefault();
             this.model.set(this.serializeForm('form'));
