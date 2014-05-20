@@ -22,11 +22,11 @@ define([
         },
 
         showDashboard: function() {
-            this.app.container.setView(new DashboardView()).loadData();
+            this.app.showView(new DashboardView()).loadData();
         },
 
         showBlank: function() {
-            this.app.container.setView(new BlankView());
+            this.app.showView(new BlankView());
         },
 
         signout: function() {

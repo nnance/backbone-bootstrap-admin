@@ -34,6 +34,10 @@ define([
             }.bind(this));
         },
 
+        showView: function(view) {
+            return this.container.setView(view);
+        },
+
         showLogin: function() {
             this.navigation.hideMenu();
             if (this.sessions.length === 0)
@@ -44,8 +48,7 @@ define([
 
         signIn: function() {
             this.trigger('login');
-            this.removeSubViews();
-            this.addSubView({view: this.container});
+            this.setView(this.container);
             if (!Backbone.History.started)
                 Backbone.history.start();
             else
